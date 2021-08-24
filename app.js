@@ -28,7 +28,6 @@ function Item (name, image) {
   this.image = image;
   this.views = 0;
   this.likes = 0;
-  this.likesPercentage = 0;
   Item.allItems.push(this);
 }
 
