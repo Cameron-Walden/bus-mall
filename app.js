@@ -27,7 +27,7 @@ function Item (name, image) {
   this.name = name;
   this.image = image;
   this.views = 0;
-  this.likes = 0;
+  this.votes = 0;
   Item.allItems.push(this);
 }
 
@@ -83,17 +83,17 @@ function clickHandle(event) {
   if (imgClicked === 'leftImg' || imgClicked === 'middleImg' || imgClicked === 'rightImg') {
     clickCount++;
     console.log(clickCount);if (imgClicked === 'leftImg') {
-      leftItem.likes++;
+      leftItem.votes++;
       renderResults();
       getRandomItems();
       renderAllItems();
     } else if (imgClicked === 'middleImg') {
-      middleItem.likes++;
+      middleItem.votes++;
       renderResults();
       getRandomItems();
       renderAllItems();
     } else if (imgClicked === 'rightImg') {
-      rightItem.likes++;
+      rightItem.votes++;
       renderResults();
       getRandomItems();
       renderAllItems();
