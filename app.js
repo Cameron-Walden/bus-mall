@@ -1,9 +1,8 @@
 'use strict';
 
 console.log('Take a break. Drink Some water.')
-console.log()
 
-let clickCount = 0;
+// let clickCount = 0;
 let rounds = 25;
 const ctx = document.getElementById('chartCanvas').getContext('2d');
 const buttonElem = document.getElementById('viewButton')
@@ -77,7 +76,7 @@ function clickHandle(event) {
   // console.log(imgClicked);
   if (imgClicked === 'leftImg' || imgClicked === 'middleImg' || imgClicked === 'rightImg') {
     rounds--;
-    clickCount++;
+    // clickCount++;
     if (imgClicked === 'leftImg') {
       // rounds--;
       leftItem.votes++;
@@ -164,6 +163,7 @@ function renderChart() {
 
 function renderResults() {
   ulClickElem.textContent = '';
+  // ulClickElem.innerHTML = '';
   for (let item of Item.allItems) {
     // console.log(item);
     let liElem = document.createElement('li');
