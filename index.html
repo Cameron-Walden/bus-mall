@@ -2,11 +2,13 @@
 <html lang="en">
     <head>
   <meta charset="UTF-8">
+  <meta name="Cameron Walden" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BusMall</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
   <header> 
@@ -21,31 +23,31 @@
   </header>
   <main>
     <section>
-      <h2 id= "itemLikes">Item Likes</h2>
+      <h2>Item Votes:</h2>
       <ul id="itemClicks">
-        <li>Bag: 0</li>
-        <li>Banana: 0</li>
-        <li>Bathroom: 0</li>
-        <li>Boots: 0</li>
-        <li>Breakfast: 0</li>
-        <li>Bubblegum: 0</li>
-        <li>Chair: 0</li>
-        <li>Cthulhu: 0</li>
-        <li>Dog-Duck: 0</li>
-        <li>Dragon: 0</li>
-        <li>Pen: 0</li>
-        <li>Pet-Sweep: 0</li>
-        <li>Scissors: 0</li>
-        <li>Shark: 0</li>
-        <li>Sweep: 0</li>
-        <li>Tauntaun: 0</li>
-        <li>Unicorn: 0</li>
-        <li>Water-Can: 0</li>
-        <li>Wine-Glass: 0</li>
+        <li>R2D2 Rolling Suitcase: 0</li>
+        <li>Banana Slicer: 0</li>
+        <li>Bathroom Tablet Stand: 0</li>
+        <li>Open-Toe Rainboots: 0</li>
+        <li>3-in-1 Portable Toaster Oven: 0</li>
+        <li>Meatball Shaped Bubblegum: 0</li>
+        <li>Designer Chair: 0</li>
+        <li>The Call of Cthulu Action Figure: 0</li>
+        <li>Duck Bill Covid Mask for your Dog: 0</li>
+        <li>Real Dragon Meat in a Can: 0</li>
+        <li>Cutlery Pen Attachment: 0</li>
+        <li>Sweeper-Slippers for your Dog: 0</li>
+        <li>Pizza Scissors and Grafitti Stencil: 0</li>
+        <li>Cozy Shark Sleeping Bag: 0</li>
+        <li>Sweeper-Onesie for your Baby: 0</li>
+        <li>Star wars Tauntaun Sleeping Bag for your Child: 0</li>
+        <li>Real Unicorn Meat in a Can: 0</li>
+        <li>Designer Watering Can: 0</li>
+        <li>Practical Wine Glass: 0</li>
       </ul>
     </section>
     <section id="allItems">
-      <h1>click the pics:</h1>      
+      <!-- <h1>Please choose one item:</h1>       -->
       <div id="leftItem"> 
         <img id="leftImg" class="small" src="./img/bag.jpg">
         <p id="leftP">Bag</p>
@@ -58,17 +60,22 @@
         <img id="rightImg" class="small" src="./img/bathroom.jpg">
         <p id="rightP">Bathroom</p>
       </div>
+      <!-- <button id ="viewButton">View Results</button> -->
     </section>
     <aside>
       <h2>BUSMALL YADA YADA YADA</h2>
       <p> Elder still travel fancied death bulbous migrate warfare places. Their after scraps slightly utter almost hints later sequence. Vaporous engineer their minds mountain-like suggestion tiers great places. Future scene tremendous which greyish years folkways deprivation these. Creeping lying sorts great cases increased peaslee, incessantly bodies? Anything cities terrible which aeons great black-snouted, concerned searchlights? Proportions airships write perception nameless echoes, circular beyond institutions!</p>
     </aside>
   </main>
+  <div id = "chartDiv">
+  <canvas id = "chartCanvas"></canvas>
+</div>
   <footer>
     <div>
-      <p>some other junk</p>
+      <p>This is my footer</p>
     </div>
   </footer>
+  <script src = "https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
