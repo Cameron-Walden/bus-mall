@@ -99,25 +99,27 @@ section div {
 img {
   box-shadow: 5px 10px 15px white;
   border-radius: 100px;
+  transition: transform .5s;
 }
 
 img:hover {
-  animation: shake 0.5s;
+  /* animation: shake 0.5s; */
+  transform: scale(1.1);
 }
 
-@keyframes shake {
+/* @keyframes shake {
   0% { transform: translate(-1px, 0px) rotate(0deg); }
   15% { transform: translate(1px, 2px) rotate(10deg); }
   30% { transform: translate(1px, 0px) rotate(20deg); }
-  /* 50% { transform: translate(4px, 3px) rotate(1deg); }
+  50% { transform: translate(4px, 3px) rotate(1deg); }
   65% { transform: translate(2px, 0px) rotate(2deg); }
   80% { transform: translate(0px, 3px) rotate(0deg); }
   100% { transform: translate(-2px, 2px) rotate(1deg); }
   15% { transform: translate(4px, 2px) rotate(0deg); }
   30% { transform: translate(0px, 0px) rotate(2deg); }
   50% { transform: translate(2px, 2px) rotate(1deg); }
-  65% { transform: translate(2px, -1px) rotate(0deg); }  */
-}
+  65% { transform: translate(2px, -1px) rotate(0deg); } 
+} */
 
 
 
