@@ -1,6 +1,6 @@
 /*using styling from class for now so I can see what I'm doing*/
 
-*{
+* { 
   box-sizing: border-box;
 }
 
@@ -49,7 +49,7 @@ main ul, main li {
   margin: 10px 0;
 }
 
-aside{ 
+aside { 
   padding-left: 30px;
 }
 
@@ -84,4 +84,24 @@ section div {
   box-sizing: border-box;
   float: left;
   width: 50%;
+}
+
+
+#leftP, #middleP, #rightP {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+img {
+  box-shadow: 5px 10px 15px white;
+  border-radius: 100px;
+}
+
+#chartDiv {
+  height: 900px;
+  width: 900px;
+  position: relative;
+  left: 700px
 }
