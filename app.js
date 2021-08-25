@@ -2,7 +2,6 @@
 
 console.log('Take a break. Drink Some water.')
 
-// let clickCount = 0;
 let rounds = 25;
 const ctx = document.getElementById('chartCanvas').getContext('2d');
 const buttonElem = document.getElementById('viewButton')
@@ -76,7 +75,6 @@ function clickHandle(event) {
   // console.log(imgClicked);
   if (imgClicked === 'leftImg' || imgClicked === 'middleImg' || imgClicked === 'rightImg') {
     rounds--;
-    // clickCount++;
     if (imgClicked === 'leftImg') {
       // rounds--;
       leftItem.votes++;
