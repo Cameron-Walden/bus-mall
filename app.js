@@ -29,7 +29,6 @@ function Item (name, image) {
   this.image = image;
   this.views = 0;
   this.votes = 0;
-  // Item.allItems.push(this);
 }
 
 Item.allItems = [];
@@ -76,30 +75,17 @@ function clickHandle(event) {
   if (imgClicked === 'leftImg' || imgClicked === 'middleImg' || imgClicked === 'rightImg') {
     rounds--;
     if (imgClicked === 'leftImg') {
-      // rounds--;
       leftItem.votes++;
-      renderResults();
-      getRandomItems();
-      renderAllItems();
     } else if (imgClicked === 'middleImg') {
-      // rounds--;
       middleItem.votes++;
-      renderResults();
-      getRandomItems();
-      renderAllItems();
     } else if (imgClicked === 'rightImg') {
-      // rounds--;
       rightItem.votes++;
-      renderResults();
-      getRandomItems();
-      renderAllItems();
       //trying to get this to work. 
       // buttonElem.style.display = 'block'
       // allItemsSectionElem.removeEventListener('click', clickHandle);
-      renderResults();
+      // renderResults();
     }
-  }
-  else {
+  } else {
     alert('Please click on a picture, ' + userName + '.');
   }
   if (rounds === 0) {
@@ -109,7 +95,9 @@ function clickHandle(event) {
     renderChart();
     renderResults();
   } else {
+    renderResults();
     getRandomItems();
+    renderAllItems();
   }
 }
 
