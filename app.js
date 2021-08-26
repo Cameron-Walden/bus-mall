@@ -3,8 +3,8 @@
 console.log('Take a break. Drink Some water.')
 
 let rounds = 25;
-const ctx = document.getElementById('chartCanvas').getContext('2d');
-const buttonElem = document.getElementById('viewButton')
+// const buttonElem = document.getElementById('viewButton')
+const allItemsArray = [];
 
 const ulClickElem = document.getElementById('itemClicks');
 const allItemsSectionElem = document.getElementById('allItems');
@@ -39,28 +39,46 @@ Item.prototype.renderItem = function (img, p) {
   this.views++;
 }
 
+function getItemsFromStorage() {
+  const stringifiedItems = localStorage.getItem('itemsInStorage')
+  if(stringifiedItems) {
+    const parsedItems = JSON.parse(stringifiedItems)
+    console.log(parsedItems)
+    for(let item of parsedItems) {
+      const myItem = new Item(item.name, item.image);
+      Item.allItems.push(myItem);
+    }
+    renderResults();
+  }  else {
+    //allItemsArray goes here
+    alert('yadayadayada')
+  }
+}
+
+function storeItems() {
+  const stringifiedItems = JSON.stringify(Item.allItems);
+  console.log(stringifiedItems)
+  localStorage.setItem('itemsInStorage', stringifiedItems)
+}
+
 function getRandomItems() {
   const unavailableItems = [leftItem, middleItem, rightItem];
-  
   while(unavailableItems.includes(leftItem)) {
     let leftIndex = Math.floor(Math.random() * Item.allItems.length);
     leftItem = Item.allItems[leftIndex];
   }
   unavailableItems.push(leftItem);
-
   while(unavailableItems.includes(middleItem)) {
     let middleIndex = Math.floor(Math.random() * Item.allItems.length);
     middleItem = Item.allItems[middleIndex];
   }
   unavailableItems.push(middleItem);
-
   while(unavailableItems.includes(rightItem)) {
     let rightIndex = Math.floor(Math.random() * Item.allItems.length);
     rightItem = Item.allItems[rightIndex];
   }
   renderAllItems();
 }
-
 
 function renderAllItems(){
   leftItem.renderItem(leftImgElem, leftPElem);
@@ -91,9 +109,8 @@ function clickHandle(event) {
   if (rounds === 0) {
     allItemsSectionElem.removeEventListener('click', clickHandle);
     alert('Thank you for voting, ' + userName + '. Check out the chart below.');
-    //remove from here and add to chartButton() if not working
     renderChart();
-    renderResults();
+    // renderResults();
   } else {
     renderResults();
     getRandomItems();
@@ -102,14 +119,17 @@ function clickHandle(event) {
 }
 
 function renderChart() {
-  // const ctx = document.getElementById('chartCanvas').getContext('2d');
+  const ctx = document.getElementById('chartCanvas').getContext('2d');
   const allItemsArray = [];
   const allViewsArray = [];
   const allVotesArray = [];
+  // const getAllItemsFromStorageArray = [];
   for(let item of Item.allItems) {
     allItemsArray.push(item.name);
     allViewsArray.push(item.views);
     allVotesArray.push(item.votes)
+    // getItemsFromStorageArray.push(whatDoIPutHere)
+    //then maybe create another display in chartCanvas
   }
   
   let chartCanvas = new Chart(ctx, {
@@ -120,16 +140,22 @@ function renderChart() {
             label: '# of Votes',
             data: allVotesArray,
             backgroundColor: 'red',
-            borderColor: 'green',
+            borderColor: 'blue',
             borderWidth: 1,
         }, {
           label: '# of Views',
           data: allViewsArray,
           backgroundColor: 'yellow',
-          borderColor: 'blue',
+          borderColor: 'green',
           borderWidth: 1,
-            
-        }]
+        },{
+          //how can i get this section to work
+          label: 'All times votes',
+          // data: getItemsFromStorageArray,
+          backgroundColor: 'green',
+          borderColor: 'yellow',
+          borderWidth: 1,
+         }]
     },
     options: {
         scales: {
@@ -187,5 +213,6 @@ Item.allItems.push(new Item('Real Unicorn Meat in a Can', './img/unicorn.jpg'))
 Item.allItems.push(new Item('Designer Watering Can', './img/water-can.jpg'))
 Item.allItems.push(new Item('Practical Wine Glass', './img/wine-glass.jpg'))
 
+getItemsFromStorage();
 getRandomItems();
-// renderAllItems();
+renderAllItems();
