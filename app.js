@@ -39,46 +39,47 @@ Item.prototype.renderItem = function (img, p) {
   this.views++;
 }
 
-function getItemsFromStorage() {
-  const stringifiedItems = localStorage.getItem('itemsInStorage')
-  if(stringifiedItems) {
-    const parsedItems = JSON.parse(stringifiedItems)
-    console.log(parsedItems)
-    for(let item of parsedItems) {
-      const myItem = new Item(item.name, item.image);
-      Item.allItems.push(myItem);
-    }
-    renderResults();
-  }  else {
-    // alert('yadayadayada')
-    Item.allItems.push(new Item('R2D2 Rolling Suitcase', './img/bag.jpg'));
-    Item.allItems.push(new Item('Banana Slicer', './img/banana.jpg'));
-    Item.allItems.push(new Item('Bathroom Tablet Stand', './img/bathroom.jpg'))
-    Item.allItems.push(new Item('Open-Toe Rainboots', './img/boots.jpg'))
-    Item.allItems.push(new Item('3-in-1 Portable Toaster Oven', './img/breakfast.jpg'))
-    Item.allItems.push(new Item('Meatball Shaped Bubblegum', './img/bubblegum.jpg'))
-    Item.allItems.push(new Item('Designer Chair', './img/chair.jpg'))
-    Item.allItems.push(new Item('The Call of Cthulu Action Figure', './img/cthulhu.jpg'))
-    Item.allItems.push(new Item('Duck Bill Covid Mask for your Dog', './img/dog-duck.jpg'))
-    Item.allItems.push(new Item('Real Dragon Meat in a Can', './img/dragon.jpg'))
-    Item.allItems.push(new Item('Cutlery Pen Attachment', './img/pen.jpg'))
-    Item.allItems.push(new Item('Sweeper-Slippers for your Dog', './img/pet-sweep.jpg'))
-    Item.allItems.push(new Item('Pizza Scissors and Grafitti Stencil', './img/scissors.jpg'))
-    Item.allItems.push(new Item('Cozy Shark Sleeping Bag', './img/shark.jpg'))
-    Item.allItems.push(new Item('Sweeper-Onesie for your Baby', './img/sweep.png'))
-    Item.allItems.push(new Item('Star wars Tauntaun Sleeping Bag for your Child', './img/tauntaun.jpg'))
-    Item.allItems.push(new Item('Real Unicorn Meat in a Can', './img/unicorn.jpg'))
-    Item.allItems.push(new Item('Designer Watering Can', './img/water-can.jpg'))
-    Item.allItems.push(new Item('Practical Wine Glass', './img/wine-glass.jpg'))
-  }
+// function getItemsFromStorage() {
+//   const stringifiedItems = localStorage.getItem('itemsInStorage')
+//   if(stringifiedItems) {
+//     const parsedItems = JSON.parse(stringifiedItems)
+//     console.log(parsedItems)
+//     for(let item of parsedItems) {
+//       const myItem = new Item(item.name, item.image);
+//       Item.allItems.push(myItem);
+//     }
+//     renderResults();
+//   }  else {
+//     // alert('yadayadayada')
+//     // when pushing these items from inside this function, it causes duplicate images to appear, so gotta figure that out.
+//     Item.allItems.push(new Item('R2D2 Rolling Suitcase', './img/bag.jpg'));
+//     Item.allItems.push(new Item('Banana Slicer', './img/banana.jpg'));
+//     Item.allItems.push(new Item('Bathroom Tablet Stand', './img/bathroom.jpg'))
+//     Item.allItems.push(new Item('Open-Toe Rainboots', './img/boots.jpg'))
+//     Item.allItems.push(new Item('3-in-1 Portable Toaster Oven', './img/breakfast.jpg'))
+//     Item.allItems.push(new Item('Meatball Shaped Bubblegum', './img/bubblegum.jpg'))
+//     Item.allItems.push(new Item('Designer Chair', './img/chair.jpg'))
+//     Item.allItems.push(new Item('The Call of Cthulu Action Figure', './img/cthulhu.jpg'))
+//     Item.allItems.push(new Item('Duck Bill Covid Mask for your Dog', './img/dog-duck.jpg'))
+//     Item.allItems.push(new Item('Real Dragon Meat in a Can', './img/dragon.jpg'))
+//     Item.allItems.push(new Item('Cutlery Pen Attachment', './img/pen.jpg'))
+//     Item.allItems.push(new Item('Sweeper-Slippers for your Dog', './img/pet-sweep.jpg'))
+//     Item.allItems.push(new Item('Pizza Scissors and Grafitti Stencil', './img/scissors.jpg'))
+//     Item.allItems.push(new Item('Cozy Shark Sleeping Bag', './img/shark.jpg'))
+//     Item.allItems.push(new Item('Sweeper-Onesie for your Baby', './img/sweep.png'))
+//     Item.allItems.push(new Item('Star wars Tauntaun Sleeping Bag for your Child', './img/tauntaun.jpg'))
+//     Item.allItems.push(new Item('Real Unicorn Meat in a Can', './img/unicorn.jpg'))
+//     Item.allItems.push(new Item('Designer Watering Can', './img/water-can.jpg'))
+//     Item.allItems.push(new Item('Practical Wine Glass', './img/wine-glass.jpg'))
+//   }
 
-}
+// }
 
-function storeItems() {
-  const stringifiedItems = JSON.stringify(Item.allItems);
-  console.log(stringifiedItems)
-  localStorage.setItem('itemsInStorage', stringifiedItems)
-}
+// function storeItems() {
+//   const stringifiedItems = JSON.stringify(Item.allItems);
+//   console.log(stringifiedItems)
+//   localStorage.setItem('itemsInStorage', stringifiedItems)
+// }
 
 function getRandomItems() {
   const unavailableItems = [leftItem, middleItem, rightItem];
@@ -212,26 +213,26 @@ function renderResults() {
 allItemsSectionElem.addEventListener('click', clickHandle);
 // buttonElem.addEventListener('click', chartButton );
 
-// Item.allItems.push(new Item('R2D2 Rolling Suitcase', './img/bag.jpg'));
-// Item.allItems.push(new Item('Banana Slicer', './img/banana.jpg'));
-// Item.allItems.push(new Item('Bathroom Tablet Stand', './img/bathroom.jpg'))
-// Item.allItems.push(new Item('Open-Toe Rainboots', './img/boots.jpg'))
-// Item.allItems.push(new Item('3-in-1 Portable Toaster Oven', './img/breakfast.jpg'))
-// Item.allItems.push(new Item('Meatball Shaped Bubblegum', './img/bubblegum.jpg'))
-// Item.allItems.push(new Item('Designer Chair', './img/chair.jpg'))
-// Item.allItems.push(new Item('The Call of Cthulu Action Figure', './img/cthulhu.jpg'))
-// Item.allItems.push(new Item('Duck Bill Covid Mask for your Dog', './img/dog-duck.jpg'))
-// Item.allItems.push(new Item('Real Dragon Meat in a Can', './img/dragon.jpg'))
-// Item.allItems.push(new Item('Cutlery Pen Attachment', './img/pen.jpg'))
-// Item.allItems.push(new Item('Sweeper-Slippers for your Dog', './img/pet-sweep.jpg'))
-// Item.allItems.push(new Item('Pizza Scissors and Grafitti Stencil', './img/scissors.jpg'))
-// Item.allItems.push(new Item('Cozy Shark Sleeping Bag', './img/shark.jpg'))
-// Item.allItems.push(new Item('Sweeper-Onesie for your Baby', './img/sweep.png'))
-// Item.allItems.push(new Item('Star wars Tauntaun Sleeping Bag for your Child', './img/tauntaun.jpg'))
-// Item.allItems.push(new Item('Real Unicorn Meat in a Can', './img/unicorn.jpg'))
-// Item.allItems.push(new Item('Designer Watering Can', './img/water-can.jpg'))
-// Item.allItems.push(new Item('Practical Wine Glass', './img/wine-glass.jpg'))
+Item.allItems.push(new Item('R2D2 Rolling Suitcase', './img/bag.jpg'));
+Item.allItems.push(new Item('Banana Slicer', './img/banana.jpg'));
+Item.allItems.push(new Item('Bathroom Tablet Stand', './img/bathroom.jpg'))
+Item.allItems.push(new Item('Open-Toe Rainboots', './img/boots.jpg'))
+Item.allItems.push(new Item('3-in-1 Portable Toaster Oven', './img/breakfast.jpg'))
+Item.allItems.push(new Item('Meatball Shaped Bubblegum', './img/bubblegum.jpg'))
+Item.allItems.push(new Item('Designer Chair', './img/chair.jpg'))
+Item.allItems.push(new Item('The Call of Cthulu Action Figure', './img/cthulhu.jpg'))
+Item.allItems.push(new Item('Duck Bill Covid Mask for your Dog', './img/dog-duck.jpg'))
+Item.allItems.push(new Item('Real Dragon Meat in a Can', './img/dragon.jpg'))
+Item.allItems.push(new Item('Cutlery Pen Attachment', './img/pen.jpg'))
+Item.allItems.push(new Item('Sweeper-Slippers for your Dog', './img/pet-sweep.jpg'))
+Item.allItems.push(new Item('Pizza Scissors and Grafitti Stencil', './img/scissors.jpg'))
+Item.allItems.push(new Item('Cozy Shark Sleeping Bag', './img/shark.jpg'))
+Item.allItems.push(new Item('Sweeper-Onesie for your Baby', './img/sweep.png'))
+Item.allItems.push(new Item('Star wars Tauntaun Sleeping Bag for your Child', './img/tauntaun.jpg'))
+Item.allItems.push(new Item('Real Unicorn Meat in a Can', './img/unicorn.jpg'))
+Item.allItems.push(new Item('Designer Watering Can', './img/water-can.jpg'))
+Item.allItems.push(new Item('Practical Wine Glass', './img/wine-glass.jpg'))
 
-getItemsFromStorage();
+// getItemsFromStorage();
 getRandomItems();
 renderAllItems();
