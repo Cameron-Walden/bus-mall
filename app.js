@@ -3,7 +3,7 @@
 console.log('Take a break. Drink Some water.')
 
 let rounds = 25;
-const buttonElem = document.getElementById('viewButton')
+// const buttonElem = document.getElementById('viewButton')
 const allItemsArray = [];
 
 const ulClickElem = document.getElementById('itemClicks');
