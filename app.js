@@ -112,6 +112,7 @@ function clickHandle(event) {
     getRandomItems();
   }
 }
+
 function viewResults() {
   renderResults();
   renderChart();
