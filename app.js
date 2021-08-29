@@ -42,7 +42,6 @@ Item.prototype.renderItem = function (img, p) {
 
 function storeItems() {
   const stringifiedItems = JSON.stringify(Item.allItems);
-  // console.log(stringifiedItems)
   localStorage.setItem('itemsInStorage', stringifiedItems)
 }
 
@@ -105,7 +104,7 @@ function clickHandle(event) {
   }
   if (rounds === 0) {
     allItemsSectionElem.removeEventListener('click', clickHandle);
-    alert('Thank you for voting, ' + userName + '. Check out the chart below.');
+    alert('Thank you for voting, ' + userName + '. Please click the button to the right to view your results.');
     storeItems();
     renderButton();
   } else {
@@ -156,7 +155,7 @@ function renderChart() {
           borderWidth: 1,
         },{
           //how can i get this section to work
-          label: 'All times votes',
+          label: 'Some other stat I don\'t know yet',
           // data: getItemsFromStorageArray,
           backgroundColor: 'green',
           borderColor: 'yellow',
