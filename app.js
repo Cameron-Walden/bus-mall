@@ -34,7 +34,7 @@ function Item (name, image) {
 
 Item.allItems = [];
 
-Item.prototype.renderItem = function (img, p) {
+Item.prototype.renderItem = function(img, p) {
   img.src = this.image;
   p.textContent = this.name;
   this.views++;
@@ -104,7 +104,7 @@ function clickHandle(event) {
   }
   if (rounds === 0) {
     allItemsSectionElem.removeEventListener('click', clickHandle);
-    alert('Thank you for voting, ' + userName + '. Please click the button to the right to view your results.');
+    alert('Thank you for voting, ' + userName + '. Please click the button to view your results.');
     storeItems();
     renderButton();
   } else {
@@ -153,14 +153,7 @@ function renderChart() {
           backgroundColor: 'yellow',
           borderColor: 'green',
           borderWidth: 1,
-        },{
-          //how can i get this section to work
-          label: 'Some other stat I don\'t know yet',
-          // data: getItemsFromStorageArray,
-          backgroundColor: 'green',
-          borderColor: 'yellow',
-          borderWidth: 1,
-         }]
+        },]
     },
     options: {
         scales: {
